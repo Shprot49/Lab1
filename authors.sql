@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
 CREATE TABLE authors (
 autor_id SERIAL PRIMARY KEY,
 surname VARCHAR(50) NOT NULL,
@@ -16,4 +18,6 @@ year_of_publication INTEGER NOT NULL,
 number_of_pages INTEGER NOT NULL,
 publisher VARCHAR(100) NOT NULL,
 FOREIGN KEY (autor_id) REFERENCES authors (autor_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
 );
